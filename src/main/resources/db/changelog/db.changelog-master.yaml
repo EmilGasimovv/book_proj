@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - includeAll:
+      path: db/changelog/liquibase-files
+      defaultSchemaName: book_store

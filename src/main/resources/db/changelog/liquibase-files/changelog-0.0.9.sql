@@ -1,0 +1,7 @@
+ALTER TABLE followers
+ADD COLUMN student_id INT,
+ADD CONSTRAINT Fk_student
+FOREIGN KEY (student_id) REFERENCES students(id) ON  DELETE  CASCADE ,
+ADD COLUMN author_id INT,
+ADD CONSTRAINT Fk_author
+FOREIGN KEY (author_id) REFERENCES authors(id)  ON DELETE CASCADE

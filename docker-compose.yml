@@ -1,0 +1,20 @@
+version: '3'
+services:
+  spring-app:
+    image: bookstore-app-image:v1
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/book_store
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 64125494944
+
+  mysql-db:
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 64125494944
+      MYSQL_DATABASE: book_store
